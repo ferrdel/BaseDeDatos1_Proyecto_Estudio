@@ -15,8 +15,10 @@ Este espacio propone presentar la información para organizar el desarrollo del 
 		  diagramaBD.jpg (Imagen del diagrama de Entidad Relacion de la BD)
 
     - script (capeta de código del proyecto)
-	---->tema_01 (sub-carpeta específica del tema)
-		  (Script de insercion de Datos de las tablas)
+	---->Creacion (script de la estructura de la base de datos)
+		SQLBDVentas.sql
+
+	---->Lote de Datos (Script de insercion de Datos de las tablas)
 		  categorias_bd1.sql
 		  clientes_bd1.sql
 		  marcas_bd1.sql
@@ -25,6 +27,9 @@ Este espacio propone presentar la información para organizar el desarrollo del 
 		  tipo_factura_bd1.sql
 		  users_bd1.sql
 		  ventas_bd1.sql
+
+	---->tema_01 (sub-carpeta específica del tema)
+		  
 
     - BDI_C2_grupo01.md (documento principal estructurado por capítulos)
     
