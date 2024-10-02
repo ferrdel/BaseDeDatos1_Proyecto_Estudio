@@ -6,19 +6,26 @@ Este espacio propone presentar la información para organizar el desarrollo del 
 
 Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)
 
-Este borrador fue elaborado usando https://stackedit.io/app#
 
 **Estructura inicial del proyecto en el repositorio**
 
-    proyecto_estudio
-    ->doc (carpeta con documentos e imágenes asociados al contenido principal)
-    ->script (capeta de código del proyecto)
+    > ## BaseDeDatos1_Proyecto_Estudio
+    - doc (carpeta con documentos e imágenes asociados al contenido principal)
+		  BDI_C2_grupo01_v1.docx (Documento del informe del proyecto)
+		  diagramaBD.jpg (Imagen del diagrama de Entidad Relacion de la BD)
+
+    - script (capeta de código del proyecto)
 	---->tema_01 (sub-carpeta específica del tema)
-		  tema01_script01.sql
-		  tema01_script02.sql
-		  tema_nombre.md (descripción completa del procedimiento para implementar el tema técnico de estudio)
-	---->tema_2
-	----> ...
-    ->nombre_proyecto.md (documento principal estructurado por capítulos)
+		  (Script de insercion de Datos de las tablas)
+		  categorias_bd1.sql
+		  clientes_bd1.sql
+		  marcas_bd1.sql
+		  perfiles_bd1.sql
+		  productos_bd1.sql
+		  tipo_factura_bd1.sql
+		  users_bd1.sql
+		  ventas_bd1.sql
+
+    - BDI_C2_grupo01.md (documento principal estructurado por capítulos)
     
 **Estructura del documento principal:**

@@ -1,17 +1,21 @@
-# Proyecto de Estudio!
     
 **Estructura del documento principal:**
 
-# PRESENTACIÓN (Título/Nombre Proyecto)
+# PROYECTO DE ESTUDIO
 
-**Asignatura**: Bases de Datos I (FaCENA-UNNE)
+** Asignatura :** Bases de Datos I (FaCENA-UNNE)
 
-**Integrantes**:
- - Sed vel lectus nec lectus placerat laoreet et sed est.
- - Sed ac justo ac mauris porttitor convallis non sit amet felis.
- - In tincidunt augue sed molestie malesuada.
+## Comision 2 - GRUPO 1
 
-**Año**: 2024
+** Integrantes **:
+> - Alan, Parras.
+> - Julio César, Pintos
+> - Giovanni Oscar, Piazza
+> - Mauricio Fernando, Ramirez Delgado.
+
+** Año de Cursado **: 2024
+
+
 
 ## CAPÍTULO I: INTRODUCCIÓN
 
@@ -55,17 +59,17 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
 ```mermaid
 erDiagram
-CUSTOMER  }|..|{  DELIVERY-ADDRESS  : has
-CUSTOMER  ||--o{  ORDER  : places
-CUSTOMER  ||--o{  INVOICE  : "liable for"
-DELIVERY-ADDRESS  ||--o{  ORDER  : receives
-INVOICE  ||--|{  ORDER  : covers
-ORDER  ||--|{  ORDER-ITEM  : includes
-PRODUCT-CATEGORY  ||--|{  PRODUCT  : contains
-PRODUCT  ||--o{  ORDER-ITEM  : "ordered in"
+marcas  }|..|{  productos  : has
+categorias  ||--o{  productos  : places
+productos  ||--o{  venta_detalle  : "liable for"
+ventas  ||--o{  venta_detalle  : receives
+tipo_factura  ||--|{  ventas  : covers
+clientes  ||--|{  ventas  : includes
+usuarios  ||--|{  ventas  : contains
+perfiles  ||--o{  usuarios  : "ordered in"
 ```
 ### Diagrama relacional
-![diagrama_relacional](https://github.com/dovillegas/basesdatos_proyecto_estudio/blob/main/doc/image_relational.png)
+![diagrama_relacional](https://github.com/dovillegas/https://github.com/ferrdel/BaseDeDatos1_Proyecto_Estudio/tree/main/doc/diagramaBD.jpg)
 
 ### Diccionario de datos
 
