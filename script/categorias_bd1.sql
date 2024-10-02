@@ -1,0 +1,31 @@
+set IDENTITY_INSERT categorias on;
+
+INSERT INTO categorias (id_categoria, descripcion, estado)
+VALUES 
+(1, 'Computadoras de Escritorio', 'alta'),
+(2, 'Laptops', 'alta'),
+(3, 'Monitores', 'alta'),
+(4, 'Teclados', 'alta'),
+(5, 'Mouses', 'alta'),
+(6, 'Impresoras', 'alta'),
+(7, 'Componentes de PC', 'alta'),
+(8, 'Accesorios de PC', 'alta'),
+(9, 'Redes y Conectividad', 'alta'),
+(10, 'Almacenamiento Externo', 'alta'),
+(11, 'Software', 'alta'),
+(12, 'Memorias RAM', 'alta'),
+(13, 'Procesadores', 'alta'),
+(14, 'Tarjetas Gráficas', 'alta'),
+(15, 'Placas Base', 'alta'),
+(16, 'Discos Duros HDD', 'alta'),
+(17, 'Unidades SSD', 'alta'),
+(18, 'Fuentes de Alimentación', 'alta'),
+(19, 'Cajas para PC', 'alta'),
+(20, 'Refrigeración (Ventiladores)', 'alta'),
+(21, 'Refrigeración Líquida', 'alta'),
+(22, 'Unidades Ópticas', 'baja'),
+(23, 'Tarjetas de Sonido', 'alta'),
+(24, 'Tarjetas de Red', 'alta'),
+(25, 'Capturadoras de Video', 'alta'),
+(26, 'Sistemas de Iluminación RGB', 'alta'),
+(27, 'Adaptadores y Convertidores', 'alta');
