@@ -28,4 +28,4 @@ Este espacio propone presentar la información para organizar el desarrollo del 
 
     - BDI_C2_grupo01.md (documento principal estructurado por capítulos)
     
-**Estructura del documento principal:**
+

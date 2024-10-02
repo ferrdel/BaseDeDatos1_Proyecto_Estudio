@@ -7,13 +7,13 @@
 
 ## Comision 2 - GRUPO 1
 
-** Integrantes **:
+## Integrantes :
 > - Alan, Parras.
 > - Julio César, Pintos
 > - Giovanni Oscar, Piazza
 > - Mauricio Fernando, Ramirez Delgado.
 
-** Año de Cursado **: 2024
+### Año de Cursado: 2024
 
 
 
@@ -29,11 +29,11 @@ Pellentesque interdum aliquam magna sit amet rutrum. Nulla aliquam ligula nec qu
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-**TEMA 1 " ---- "** 
+### TEMA 1 " ---- "
 Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
 
-**TEMA 2 " ----- "** 
+### TEMA 2 " ----- "
 Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
 ...
@@ -46,7 +46,9 @@ Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luct
 Vestibulum rutrum feugiat molestie. Nunc id varius augue. Ut augue mauris, venenatis et lacus ut, mattis blandit urna. Fusce lobortis, quam non vehicula scelerisque, nisi enim ultrices diam, ac tristique libero ex nec orci.
 
  **b) Herramientas (Instrumentos y procedimientos)**
-Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luctus sed fringilla non, ullamcorper at eros. Integer interdum id orci id rutrum. Curabitur facilisis lorem sed metus interdum accumsan. 
+- GitHub
+- Microsoft Word
+- SQL Server Management Studio
 
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
@@ -56,20 +58,20 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 
 
 ### Diagrama conceptual (opcional)
-Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
+
 ```mermaid
 erDiagram
-marcas  }|..|{  productos  : has
-categorias  ||--o{  productos  : places
-productos  ||--o{  venta_detalle  : "liable for"
-ventas  ||--o{  venta_detalle  : receives
-tipo_factura  ||--|{  ventas  : covers
-clientes  ||--|{  ventas  : includes
-usuarios  ||--|{  ventas  : contains
-perfiles  ||--o{  usuarios  : "ordered in"
+marcas  ||..|{  productos  
+categorias  ||--o{  productos  
+productos  }|--|{  venta_detalle  
+ventas  ||--||  venta_detalle  
+tipo_factura  ||--|{  ventas  
+clientes  ||--|{  ventas  
+usuarios  ||--|{  ventas  
+perfiles  ||--||  usuarios  
 ```
 ### Diagrama relacional
-![diagrama_relacional](https://github.com/dovillegas/https://github.com/ferrdel/BaseDeDatos1_Proyecto_Estudio/tree/main/doc/diagramaBD.jpg)
+![diagrama_relacional](https://github.com/ferrdel/BaseDeDatos1_Proyecto_Estudio/tree/main/doc/diagramaBD.jpg)
 
 ### Diccionario de datos
 
