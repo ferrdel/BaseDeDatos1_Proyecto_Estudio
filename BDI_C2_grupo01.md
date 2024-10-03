@@ -68,16 +68,17 @@ El Diagrama de Entidad-Relación asociado al caso de estudio planteado es el sig
 
 ### Diagrama conceptual (opcional)
 
+Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
 ```mermaid
 erDiagram
-marcas  ||..|{  productos  :  
-categorias  ||--o{  productos  :  
-productos  }|--|{  venta_detalle  :  
-ventas  ||--||  venta_detalle  :  
-tipo_factura  ||--|{  ventas  :  
-clientes  ||--|{  ventas  :  
-usuarios  ||--|{  ventas  :  
-perfiles  ||--||  usuarios  :  
+marcas  ||..|{  productos  : has
+categorias  ||--o{  productos  : has  
+productos  }|--|{  venta_detalle  : has 
+ventas  ||--||  venta_detalle  : has
+tipo_factura  ||--|{  ventas  : has
+clientes  ||--|{  ventas  : has
+usuarios  ||--|{  ventas  : has
+perfiles  ||--||  usuarios  : has
 ```
 
 ### Diagrama relacional
