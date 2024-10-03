@@ -19,9 +19,32 @@
 
 ## CAPÍTULO I: INTRODUCCIÓN
 
-### Caso de estudio
+### 1.1 INTRODUCCIÓN
 
-Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris tortor nisl, ultricies ac scelerisque nec, feugiat in nibh. 
+En el contexto actual, la gestión eficiente de bases de datos relacionales seha convertido en un pilar fundamental para el desarrollo de sistemas deinformación robustos y seguros. A medida que las organizaciones manejanvolúmenes crecientes de datos, surge la necesidad de implementarestrategias que no solo garanticen el acceso controlado y seguro a lainformación, sino también optimicen el rendimiento de las consultas yoperaciones realizadas en las bases de datos.
+
+## 1.2 Definición o planteamiento del problema.
+
+En este proyecto se estudiará el manejo de permisos a nivel de usuariosde base de datos, destacando la importancia de establecer políticas deseguridad que definan de manera granular el acceso y la manipulación dedatos.
+También, se analizará el uso de procedimientos y funcionesalmacenadas como herramientas de encapsulamiento y reutilización decódigo SQL. Estas estructuras permiten la automatización de procesos,mejoran la consistencia de las operaciones y contribuyen a una mejororganización lógica dentro de la base de datos.
+Luego, se abordará la optimización de consultas a través de índices,técnica que se enfoca en mejorar el rendimiento y la velocidad de lasconsultas SQL.
+A lo largo de este proyecto, se realizará un análisis teórico y práctico decada uno de estos temas, demostrando cómo su correcta aplicación puedecontribuir significativamente a la eficiencia, seguridad y rendimiento de lossistemas de bases de datos relacionales en entornos académicos yprofesionales.
+Todo este análisis se llevará a cabo en base a un estudio de una base dedatos de un sistema de venta de insumos informáticos.
+
+## 1.3 Objetivo del Trabajo Práctico.
+
+El presente proyecto tiene como objetivo explorar y aplicar conceptosavanzados de bases de datos relacionales, abordando tres temáticasclaves: manejo de permisos a nivel de usuarios de base de datos,procedimientos y funciones almacenadas y optimización de consultasa través de índices.
+
+## 1.3.1 Objetivos Generales.
+Los objetivos generales es conseguir la correcta interpretación delproblema, en base a su planteamiento teórico con los conceptos de laasignatura para su posterior implementación con software dedicado ala gestión de bases de datos, control de versionado, normalización ydocumentación del proyecto en cuestión, cumpliendo las propuestasdictadas por la cátedra y ofreciendo una solución eficiente alproblema.
+
+## 1.3.2 Objetivos Específicos.
+Identificar correctamente el DER asociado al problema con suposterior Diccionario de datos y scripts SQL competentes. Utilizar unesquema de niveles de usuarios por roles para brindar permisos yseguridad.
+Mediante la creación de usuarios, implementar diferentes roles deseguridad en la base de datos para asignar permisos específicosrespecto a cada rol.
+Consultas SQL para testear el funcionamiento correcto y prevenirfallas o inconsistencias dentro del sistema.
+Utilización de índices y su posterior implementación para verificar sucorrecto desempeño y eficiencia en el manejo de la base de datos.
+Correcta documentación y control de versionado del equipo en estecaso de estudio para cumplimentar los objetivos
+
 
 ### Definición o planteamiento del problema
 
@@ -30,30 +53,16 @@ Pellentesque interdum aliquam magna sit amet rutrum. Nulla aliquam ligula nec qu
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
 ### TEMA 1 " ---- "
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-
-
-### TEMA 2 " ----- "
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
 ...
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
-Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luctus sed fringilla non, ullamcorper at eros.
-
- **a) Cómo se realizó el Trabajo Práctico**
-Vestibulum rutrum feugiat molestie. Nunc id varius augue. Ut augue mauris, venenatis et lacus ut, mattis blandit urna. Fusce lobortis, quam non vehicula scelerisque, nisi enim ultrices diam, ac tristique libero ex nec orci.
-
- **b) Herramientas (Instrumentos y procedimientos)**
-- GitHub
-- Microsoft Word
-- SQL Server Management Studio
-
+...
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
-Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris tortor nisl, ultricies ac scelerisque nec, feugiat in nibh. Pellentesque interdum aliquam magna sit amet rutrum. 
+El Diagrama de Entidad-Relación asociado al caso de estudio planteado es el siguiente:
 
 
 
@@ -61,42 +70,38 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 
 ```mermaid
 erDiagram
-marcas  ||..|{  productos  
-categorias  ||--o{  productos  
-productos  }|--|{  venta_detalle  
-ventas  ||--||  venta_detalle  
-tipo_factura  ||--|{  ventas  
-clientes  ||--|{  ventas  
-usuarios  ||--|{  ventas  
-perfiles  ||--||  usuarios  
+marcas  ||..|{  productos  :  
+categorias  ||--o{  productos  :  
+productos  }|--|{  venta_detalle  :  
+ventas  ||--||  venta_detalle  :  
+tipo_factura  ||--|{  ventas  :  
+clientes  ||--|{  ventas  :  
+usuarios  ||--|{  ventas  :  
+perfiles  ||--||  usuarios  :  
 ```
+
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/ferrdel/BaseDeDatos1_Proyecto_Estudio/tree/main/doc/diagramaBD.jpg)
 
-### Diccionario de datos
+Y su diccionario de datos asociado resulta, por ejemplo, en el caso de la Tabla Venta_Detalle:
 
 Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
 
 
 ### Desarrollo TEMA 1 "----"
 
-Fusce auctor finibus lectus, in aliquam orci fermentum id. Fusce sagittis lacus ante, et sodales eros porta interdum. Donec sed lacus et eros condimentum posuere. 
+...
 
 > Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
 
 ### Desarrollo TEMA 2 "----"
-
-Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum. 
-
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
 
 ... 
 
 
 ## CAPÍTULO V: CONCLUSIONES
 
-Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vitae pharetra lacus. Nunc finibus, tellus et dictum semper, nisi sem accumsan ligula, et euismod quam ex a tellus. 
-
+...
 
 
 ## BIBLIOGRAFÍA DE CONSULTA
