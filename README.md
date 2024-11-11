@@ -28,8 +28,10 @@ Este espacio propone presentar la información para organizar el desarrollo del 
 		  users_bd1.sql
 		  ventas_bd1.sql
 
-	---->tema_01 (sub-carpeta específica del tema)
-		  
+	---->tema_01 - Permisos a Nivel de Usuarios (sub-carpeta específica del tema)
+	---->tema_02 - Procedimientos y Funciones Almacenadas (sub-carpeta específica del tema)
+ 	---->tema_03 - Optimización de Consultas con Indexación (sub-carpeta específica del tema)
+  	---->tema_04 - Triggers (sub-carpeta específica del tema)
 
     - BDI_C2_grupo01.md (documento principal estructurado por capítulos)
     
