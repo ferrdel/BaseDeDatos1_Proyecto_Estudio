@@ -2,11 +2,14 @@ create database proyecto_bd_I;
 go
 use proyecto_bd_I;
 go
+
+--1. creacion de la tabla de categorias
 CREATE TABLE [dbo].[categorias](
 	[id_categoria] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[descripcion] [varchar](30) NOT NULL,
 	[estado] [varchar](30) NOT NULL)
 
+--2. Creacion de la tabla de clientes
 CREATE TABLE [dbo].[clientes](
 	[dni_c] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[nombre_c] [varchar](50) NOT NULL,
@@ -17,16 +20,19 @@ CREATE TABLE [dbo].[clientes](
 	[telefono] [bigint] NOT NULL,
 	[eliminado] [varchar](30) NOT NULL)
 
+--3. Creacion de la tabla de marcas
 CREATE TABLE [dbo].[marcas](
 	[id_marca] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[nombre_marca] [varchar](30) NOT NULL,
 	[estado_marca] [varchar](30) NOT NULL)
 
+--4. Creacion de la tabla de tipos de perfiles
 CREATE TABLE [dbo].[perfiles](
 	[id_perfil] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[descripcion] [varchar](20) NULL,
 	[estado] [bit] NULL)
 
+--5. Creacion de la tabla de productos
 CREATE TABLE [dbo].[productos](
 	[id_producto] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[descripcion] [varchar](50) NOT NULL,
@@ -39,11 +45,12 @@ CREATE TABLE [dbo].[productos](
 	[marca_prod] [int] NULL,
 	[imagen] [varchar](max) NULL)
 
+--6. Creacion de la tabla de tipo de facturas
 CREATE TABLE [dbo].[tipo_factura](
 	[cod_fact] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[descripcion] [varchar](max) NOT NULL)
 
-
+--7. Creacion de la tabla de usuarios
 CREATE TABLE [dbo].[users](
 	[id_usuario] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[apellido] [varchar](50) NOT NULL,
@@ -57,6 +64,7 @@ CREATE TABLE [dbo].[users](
 	[estado_perfil] [varchar](50) NOT NULL,
 	[fecha_nac] [date] NULL)
 
+--8. Creacion de la tabla de detalles para cada venta
 CREATE TABLE [dbo].[venta_detalle](
 	[id_detalle] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[id_venta] [int] NOT NULL,
@@ -65,6 +73,7 @@ CREATE TABLE [dbo].[venta_detalle](
 	[sub_total] [float] NOT NULL,
 	[eliminado] [varchar](20) NOT NULL)
 
+--9. Creacion de la tabla de ventas
 CREATE TABLE [dbo].[ventas](
 	[id_venta] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[id_usuario] [int] NOT NULL,
@@ -74,6 +83,7 @@ CREATE TABLE [dbo].[ventas](
 	[numeroVenta] [decimal](18, 0) NOT NULL,
 	[estado] [varchar](20) NULL,
 	[id_TipoFact] [int] NOT NULL)
+
 
 ALTER TABLE [dbo].[productos]  WITH CHECK ADD  CONSTRAINT [FK_productos_categorias] FOREIGN KEY([id_categoria])
 REFERENCES [dbo].[categorias] ([id_categoria])
