@@ -76,11 +76,9 @@ Sobre esta estructura relacional se llevarán a cabo las inserciones del lote de
 Empecemos pues, a definir los rasgos principales de cada uno de estos temas que nos guiarán en la materialización del caso de estudio, 
 
 
-### TEMA 1 "Manejo de Permisos a Nivel de Usuarios en la Base de Datos"
+## TEMA 1 "Manejo de Permisos a Nivel de Usuarios en la Base de Datos"
 
 ...
-
-### TEMA 2 "Procedimientos y Funciones Almacenadas"
 
 ## TEMA 2 "Procedimientos y Funciones Almacenadas"
 
@@ -163,7 +161,7 @@ Algunas características de la relación función-procedimiento:
 >***Es posible invocar funciones dentro de un procedimiento almacenado pero no se puede invocar un procedimiento almacenado dentro de una función. También es posible invocar procedimientos desde un procedimiento. ***
 
 
-### TEMA 3 "Optimización de Consultas  a través de índices"
+## TEMA 3 "Optimización de Consultas  a través de índices"
 
 En SQLSERVER, los índices son estructuras que se utilizan para mejorar la eficiencia de las consultas a una tabla. Estos índices contienen copias de los datos de la tabla, organizados de una manera que permite que las consultas encuentren los datos más rápidos.
 Los índices son importantes en las bases de datos relacionales grandes, donde las consultas pueden ser muy complejas y los tiempos de respuestas de la consulta pueden ser críticos. Al agregar índices, se puede acelerar el proceso de recuperación de datos y mejorar el rendimiento de la base de datos.
@@ -194,7 +192,7 @@ Los índices son importantes en las bases de datos relacionales grandes, donde l
 >Es importante conocer los diferentes tipos de índices para poder elegir el más adecuado según las necesidades de la base de datos y mejorar la eficiencia de las consultas.
 
 
-### TEMA 4 "Triggers"
+## TEMA 4 "Triggers"
 
 ...
 
@@ -240,5 +238,7 @@ Los índices son importantes en las bases de datos relacionales grandes, donde l
  2. Unidad 12. Triggers, procedimientos y funciones en MySQL - Apuntes de BD para DAW, DAM y ASIR -José Juan Sánchez Hernández - Curso 2023/2024
  3. Pulido Romero, E. Escobar Domínguez, Ó. & Núñez Pérez, J. Á. (2019). Base de datos. Grupo Editorial Patria. 
  4. Silberschatz, Korth, Sudarshan. FUNDAMENTOS DE BASES DE DATOS. Cuarta edición.
+ 5. Qué es y cómo usar un trigger en SQL | Alura Cursos Online.
+ 6. Seguimiento y optimización de consultas utilizando índices SQL Server
 
 
