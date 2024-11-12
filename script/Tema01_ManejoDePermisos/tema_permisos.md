@@ -1,3 +1,5 @@
+## TEMA 1 "Manejo de permisos a nivel de usuarios de base de datos."
+
 Los permisos son los que nos permiten controlar qué acciones podemos realizar sobre los objetos de una base de datos, ya sean tablas, vistas, también si podemos agregar o eliminar datos, entre otras cosas. Estos permisos se dividen en:
 
 ### Permisos de DML (Data Manipulation Language)
@@ -59,3 +61,9 @@ GRANT SELECT ON productos TO pepito;
 DENY INSERT, UPDATE ON perfiles TO pepito
 ```
 El manejo adecuado de permisos en `SQL Server` es una de las estrategias fundamentales para proteger los datos y garantizar un acceso controlado. La implementación de roles, el uso del principio de menor privilegio y la revisión constante de permisos son prácticas esenciales para mantener la seguridad en un entorno de bases de datos relacionales. A través de herramientas como `SSMS` y mediante una correcta estructuración de permisos, los administradores pueden asegurar una gestión eficiente y segura de los datos.
+
+## Conclusiones del tema 1:
+
+Al desarrollar el tema de permisos y roles en SQL Server, entendimos cómo una adecuada gestión de accesos contribuye a la seguridad y eficiencia en el manejo de datos en entornos colaborativos. Desde los permisos individuales hasta la creación de roles específicos, como el de solo lectura, comprobamos que SQL Server permite personalizar y controlar el acceso a los datos de manera flexible y organizada.
+
+En los ejercicios prácticos, implementamos permisos a nivel de usuario y de rol, asignando permisos de ejecución a un usuario con acceso limitado y comprobando cómo los roles facilitan la administración de múltiples usuarios. Esto no solo demostró que los roles permiten ahorrar tiempo y reducir errores al agregar o remover usuarios sin afectar los permisos individuales, sino que también minimiza errores administrativos, proporcionando un entorno más seguro y escalable para la administración de usuarios en la base de datos.
