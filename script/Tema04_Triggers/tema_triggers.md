@@ -56,7 +56,7 @@ trigger_time: { BEFORE | AFTER }
 trigger_event: { INSERT | UPDATE | DELETE }
 trigger_order: { FOLLOWS | PRECEDES } other_trigger_name
 ```
-## Conclusiones PArticulares del Tema
+## Conclusiones Particulares del Tema
 
 Tras realizar las pruebas correspondientes, podemos concluir que los triggers implementados cumplen eficazmente su propósito, asegurando la trazabilidad y la integridad de los datos en nuestra base de datos. 
 
