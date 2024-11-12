@@ -78,7 +78,49 @@ Empecemos pues, a definir los rasgos principales de cada uno de estos temas que 
 
 ## TEMA 1 "Manejo de Permisos a Nivel de Usuarios en la Base de Datos"
 
-...
+Los permisos son los que nos permiten controlar qué acciones podemos realizar sobre los objetos de una base de datos, ya sean, tablas, vistas, también si podemos agregar o eliminar datos, entre otras cosas. Estos permisos se dividen en:
+
+>   *Permisos de DML (Data Manipulation Language):* son operaciones de consulta y modificación de datos.
+        **SELECT**: Permite consultar datos.
+        **INSERT**: Permite agregar nuevos registros.
+        **UPDATE**: Permite modificar registros existentes.
+        **DELETE**: Permite eliminar registros.
+
+> 	*Permisos de ejecución:* Permiten a los usuarios ejecutar procedimientos almacenados y funciones:
+	    **EXECUTE**: Permite la ejecución de procedimientos almacenados.
+
+> 	*Permisos de control de objetos*: Permiten a los usuarios modificar o administrar objetos dentro de la base de datos:
+	    **ALTER**: Permite modificar la estructura de un objeto.
+	    **CONTROL**: Otorga el control total sobre un objeto.
+
+SQL Server permite la *creación y gestión de usuarios tanto a nivel de servidor como dentro de cada base de datos específica*. La gestion de usuarios se realiza a través de la creacion de cuentas y asignacion de roles y permisos. Los usuarios pueden ser creados mediante el propio SQL Server o mediante autenticación de Windows.
+*Para crear un usuario se utilizan comandos como CREATE LOGIN para la autenticacion de servidor y CREATE USER para la creacion del usuario dentro de una base de datos específica.*
+
+**Sintaxis de creación de un usuario mediante LOGIN y USER:**
+
+-- creacion de usuario a nivel servidor
+*CREATE LOGIN alan WITH PASSWORD = '12345';*
+
+-- creacion de usuario dentro de la base de datos proyecto_bd_I
+*USE proyecto_bd_I;*
+*CREATE USER alan FOR LOGIN alan;*
+
+**Los roles son colecciones de permisos que se pueden asignar a los usuarios para facilitar la administración.** SQL Server ofrece dos tipos de roles:
+Roles fijos de servidor: Roles como sysadmin y securityadmin, que son definidos por SQL Server tienen permisos amplios a nivel de servidor.
+Roles fijos de base de datos: Roles como db_owner, db_datareader, y db_datawriter, que se aplican a nivel de base de datos para controlar operaciones específicas sobre los datos.
+
+Sintaxis:
+-- asigna el rol db_owner al usuario 
+*ALTER ROLE db_owner ADD MEMBER alan;*
+-- crear un rol personalizado para analistas de datos 
+*CREATE ROLE AnalistaDeDatos;*
+
+La gestion de permisos se realiza principalmente a través de los comandos:
+**GRANT**: Otorga un permiso a un usuario o rol.
+**DENY**: Niega un permiso específico a un usuario o rol, incluso si se le ha otorgado anteriormente.
+**REVOKE**: Elimina un permiso previamente otorgado o denegado.
+
+El manejo adecuado de permisos en SQL Server es una de las estrategias fundamentales para proteger los datos y garantizar un acceso controlado. La implementación de roles, el uso del principio de menor privilegio y la revisión constante de permisos son prácticas esenciales para mantener la seguridad en un entorno de bases de datos relacionales. A través de herramientas como SSMS y mediante una correcta estructuración de permisos, los administradores pueden asegurar una gestión eficiente y segura de los datos.
 
 ## TEMA 2 "Procedimientos y Funciones Almacenadas"
 
@@ -194,7 +236,49 @@ Los índices son importantes en las bases de datos relacionales grandes, donde l
 
 ## TEMA 4 "Triggers"
 
-...
+Un trigger es un **procedimiento almacenado en la base de datos que se ejecuta automáticamente cada vez que ocurre un evento especial** en la base de datos. Por ejemplo, un desencadenante puede activarse cuando se inserta una fila en una tabla específica o cuando ciertas columnas de la tabla se actualizan. 
+
+*La creación de un disparador o trigger se realiza en dos pasos:*
+    - En primer lugar, **se crea la función disparadora.**
+    - En segundo lugar, **se crea el propio disparador SQL con el comando CREATE TRIGGER** al que se introducen los parámetros para ejecutar la función disparadora.
+
+Por lo general, estos eventos que desencadenan los triggers son cambios en las tablas mediante operaciones de inserción, eliminación y actualización de datos (insert, delete y update).
+
+**> Eventos a los que responden los triggers:**
+    *INSERT*: El trigger se activa cuando se inserta una nueva fila sobre la tabla asociada.
+    *UPDATE*: El trigger se activa cuando se actualiza una fila sobre la tabla asociada.
+    *DELETE*: El trigger se activa cuando se elimina una fila sobre la tabla asociada.
+
+**> Clases de Triggers en SQL:**
+    *- Triggers DDL (Data Definition Language):* Esta clase de Triggers se activa en eventos que modifican la estructura de la base de datos (como crear, modificar o eliminar una tabla) o en ciertos eventos relacionados con el servidor, como cambios de seguridad o actualización de eventos estadísticos.
+    *- Triggers DML (Data Modification Language):* Esta es la clase más común de Triggers. En este caso, el evento de disparo es una declaración de modificación de datos; podría ser una declaración de inserción, actualización o eliminación en una tabla o vista.
+
+A su vez estos últimos tienen diferentes tipos:
+
+    - *FOR o AFTER [INSERT, UPDATE, DELETE]*: Estos tipos de Triggers se ejecutan después de completar la instrucción de disparo (inserción, actualización o eliminación).
+    *-INSTEAD OF [INSERT, UPDATE, DELETE]*: A diferencia del tipo FOR (AFTER), los Triggers INSTEAD OF se ejecutan en lugar de la instrucción de disparo. En otras palabras, este tipo de trigger reemplaza la instrucción de disparo. Son de gran utilidad en los casos en los que es necesario tener integridad referencial entre bases de datos.
+
+> **Ventajas**:
+    - Generar automáticamente algunos valores de columna derivados.
+    - Aplicar la integridad referencial.
+    - Registro de eventos y almacenamiento de información sobre el acceso a la tabla.
+    - Auditoría.
+    - Replicación sincrónica de tablas.
+    - Imponer autorizaciones de seguridad.
+    - Prevenir transacciones inválidas.
+
+**Utilización**:
+    CREATE
+        [DEFINER = { user | CURRENT_USER }]
+        TRIGGER trigger_name
+        trigger_time trigger_event
+        ON tbl_name FOR EACH ROW
+        [trigger_order]
+        trigger_body
+    trigger_time: { BEFORE | AFTER }
+    trigger_event: { INSERT | UPDATE | DELETE }
+    trigger_order: { FOLLOWS | PRECEDES } other_trigger_name
+
 
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA 
@@ -229,7 +313,15 @@ Los índices son importantes en las bases de datos relacionales grandes, donde l
 
 ## CAPÍTULO V: CONCLUSIONES
 
-...
+Al desarrollar el tema de permisos y roles en SQL Server, entendimos cómo una adecuada gestión de accesos contribuye a la seguridad y eficiencia en el manejo de datos en entornos colaborativos. Desde los permisos individuales hasta la creación de roles específicos, como el de solo lectura, comprobamos que SQL Server permite personalizar y controlar el acceso a los datos de manera flexible y organizada.
+En los ejercicios prácticos, implementamos permisos a nivel de usuario y de rol, asignando permisos de ejecución a un usuario con acceso limitado y comprobando cómo los roles facilitan la administración de múltiples usuarios. Esto no solo demostró que los roles permiten ahorrar tiempo y reducir errores al agregar o remover usuarios sin afectar los permisos individuales, sino que también minimiza errores administrativos, proporcionando un entorno más seguro y escalable para la administración de usuarios en la base de datos.
+
+Hemos vistos que podemos ahorrarnos líneas de código y reutilizar instrucciones mediante el uso de los procedimientos que trae el sistema por defecto y la definición de propios procesos por el usuario. Esto también ayuda a la seguridad e integridad de los datos, así como a la eficiencia en las consultas en la base de datos. Conjunto a esto, aparecen las funciones como otra alternativa pero sin devolucion de parámetros de salida y con un modo de invocación exclusivamente dentro de una consulta SELECT. Además, la posibilidad de utilizar procedimientos uno dentro del otro y vincular funciones a diferentes sesiones y usuarios según sean globales o locales.
+
+Con las pruebas realizadas e información obtenida, pudimos observar que, al implementar índices agrupados, podemos tener mayor tiempo de respuestas y ejecución del motor de base de datos, mejorando el rendimiento de las consultas y reduciendo el tiempo de búsqueda de las mismas al contener un gran volumen de datos o bases de datos extremadamente grandes. Teniendo en cuenta que la selección de un tipo de índices incorrecto o la aplicación inadecuada, puede tener un impacto negativo en el rendimiento de las bases de datos.
+
+Tras realizar las pruebas correspondientes, podemos concluir que los triggers implementados cumplen eficazmente su propósito, asegurando la trazabilidad y la integridad de los datos en nuestra base de datos. Los triggers de auditoría registran de manera precisa los valores previos a cualquier modificación o eliminación, incluyendo detalles como el tipo de operación, los datos afectados, la fecha, la hora y el usuario que ejecutó la acción, lo cual es fundamental para garantizar un registro detallado y confiable de las operaciones realizadas. Asimismo, el trigger que previene eliminaciones no autorizadas funcionó correctamente, bloqueando cualquier intento de borrado en la tabla protegida y mostrando el mensaje de error definido, reafirmando la seguridad de nuestras tablas más críticas. En caso de necesitar realizar operaciones excepcionales, como un DELETE, hemos comprobado que es posible deshabilitar temporalmente los triggers, lo que nos brinda la flexibilidad necesaria para gestionar escenarios imprevistos. Estas implementaciones fortalecen significativamente la seguridad y el control en nuestra base de datos, permitiéndonos trabajar con mayor confianza en la protección y auditoría de la información sensible.
+
 
 
 ## BIBLIOGRAFÍA DE CONSULTA
