@@ -55,3 +55,13 @@ CREATE
 trigger_time: { BEFORE | AFTER }
 trigger_event: { INSERT | UPDATE | DELETE }
 trigger_order: { FOLLOWS | PRECEDES } other_trigger_name
+```
+## Conclusiones PArticulares del Tema
+
+Tras realizar las pruebas correspondientes, podemos concluir que los triggers implementados cumplen eficazmente su propósito, asegurando la trazabilidad y la integridad de los datos en nuestra base de datos. 
+
+Los triggers de auditoría registran de manera precisa los valores previos a cualquier modificación o eliminación, incluyendo detalles como el tipo de operación, los datos afectados, la fecha, la hora y el usuario que ejecutó la acción, lo cual es fundamental para garantizar un registro detallado y confiable de las operaciones realizadas. 
+
+Asimismo, el trigger que previene eliminaciones no autorizadas funcionó correctamente, bloqueando cualquier intento de borrado en la tabla protegida y mostrando el mensaje de error definido, reafirmando la seguridad de nuestras tablas más críticas. 
+
+En caso de necesitar realizar operaciones excepcionales, como un DELETE, hemos comprobado que es posible deshabilitar temporalmente los triggers, lo que nos brinda la flexibilidad necesaria para gestionar escenarios imprevistos. Estas implementaciones fortalecen significativamente la seguridad y el control en nuestra base de datos, permitiéndonos trabajar con mayor confianza en la protección y auditoría de la información sensible.
